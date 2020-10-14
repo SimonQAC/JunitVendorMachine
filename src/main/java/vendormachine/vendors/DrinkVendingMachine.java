@@ -30,9 +30,6 @@ public class DrinkVendingMachine {
         populateDrinkList();
     }
     
-    //===============================
-    //===  Methods
-    //===============================
 
     //Don't worry this is just populating our drink list
     private void populateDrinkList(){
@@ -69,13 +66,30 @@ public class DrinkVendingMachine {
         this.availableCredit += user.getCredit(credit);
     }
 
-    //===============================
-    //===  'get'ors
-    //===============================
+	public BRANDS getBrandName() {
+		return brandName;
+	}
+
+	public void setBrandName(BRANDS brandName) {
+		this.brandName = brandName;
+	}
+
+	public float getAvailableCredit() {
+		return availableCredit;
+	}
+
+	public void setAvailableCredit(float availableCredit) {
+		this.availableCredit = availableCredit;
+	}
+
+	public ArrayList<Snack> getDrinkList() {
+		return drinkList;
+	}
+
+	public void setDrinkList(ArrayList<Snack> drinkList) {
+		this.drinkList = drinkList;
+	}
 
 
-    //===============================
-    //===  'set'ors
-    //===============================
 
 }
