@@ -31,8 +31,8 @@ Goal:
 "Test the `DrinkVendingMachine` class from:	`vendormachine.vendors.DrinkVendingMachine`."
 
 Goals: 
-- [ ] Achieve 80% or more code/line coverage for the `DrinkVendingMachine` class.
-- [ ] Analyse code and add missing methods. (TDD)
+- [x] Achieve 80% or more code/line coverage for the `DrinkVendingMachine` class.
+- [x] Analyse code and add missing methods. (TDD)
 
 ---
 
