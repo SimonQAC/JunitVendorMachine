@@ -22,7 +22,7 @@ Complete the tasks below...
 "Test the `Wallet` class from:    `vendormachine.users.util.Wallet`."
 	  	
 Goal: 
-- [ ] Achieve 80% or more code/line coverage for the 'Wallet' class.
+- [x] Achieve 80% or more code/line coverage for the 'Wallet' class.
 
 ---
 
