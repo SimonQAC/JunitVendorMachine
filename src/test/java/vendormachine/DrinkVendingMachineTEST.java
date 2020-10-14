@@ -4,6 +4,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -13,6 +16,9 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 
 import vendormachine.users.Person;
 import vendormachine.users.util.Wallet;
@@ -34,10 +40,20 @@ public class DrinkVendingMachineTEST {
 	private String div = "-----";
 	private String name = "test";
 	
+	private static ExtentReports report;
+	private ExtentTest test;
+	
 
 	@BeforeClass
 	public static void beforeTestSuite() {
 		System.out.println("BeforeClass: Start of TestSuite\n");
+		
+		Path root = FileSystems.getDefault().getPath("").toAbsolutePath();
+		Path filePath = Paths.get(root.toString(), "\\target\\reports\\DVMReport.html");
+		
+		System.out.println(filePath.toString());
+		
+		report = new ExtentReports(filePath.toString(), true);
 	}
 	
 	@Before
@@ -50,9 +66,11 @@ public class DrinkVendingMachineTEST {
 	
 	@Test
 	public void testDrinkVendingMachine() {
+		test = report.startTest("testDrinkVendingMachine");
 		assertTrue (dvm instanceof DrinkVendingMachine);
 		
 		dvm = new DrinkVendingMachine(availableCredit, brandName);
+		testReport.assertReport(test, true, dvm instanceof DrinkVendingMachine);
 		assertTrue (dvm instanceof DrinkVendingMachine);
 	}
 	
