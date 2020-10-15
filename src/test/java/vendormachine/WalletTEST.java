@@ -19,7 +19,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import vendormachine.users.util.Wallet;
 
 public class WalletTEST {
-	
+
 	private String brand = "test";
 	private float storedCredit = 0.5f;
 	
