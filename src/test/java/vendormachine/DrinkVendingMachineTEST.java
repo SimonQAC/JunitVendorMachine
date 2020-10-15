@@ -126,6 +126,17 @@ public class DrinkVendingMachineTEST {
 		testReport.assertReport(test, true, null == this.dvm.selectDrink(0));
 		assertEquals(null, this.dvm.selectDrink(0));
 	}
+		
+	 @Test
+	 public void selectDrinkTest() {
+		 test = report.startTest("selectDrinkTest");
+		 Snack snack = new Snack("test", 0.5f);
+		 drinkList.add(snack);
+		 Snack  newSnack = drinkList.get(0);
+		 testReport.assertReport(test, true, snack == newSnack);
+		 assertEquals(snack, newSnack);
+
+	}
 	
 	@After
 	public void afterTest() {
